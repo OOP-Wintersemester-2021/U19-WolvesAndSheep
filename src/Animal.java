@@ -3,65 +3,65 @@ import de.ur.mi.oop.graphics.Circle;
 
 public abstract class Animal {
 
-    protected Circle circle;
-    protected Vector vector;
+    protected Circle body;
+    protected Vector movementVector;
     protected boolean isAlive;
 
-    public Animal(float x, float y, float radius, Color color, Vector vector) {
-        this.circle = new Circle(x, y, radius, color);
-        this.vector = vector;
+    public Animal(float x, float y, float size, Color color, Vector movementVector) {
+        this.body = new Circle(x, y, size, color);
+        this.movementVector = movementVector;
         isAlive = true;
     }
 
     public void draw() {
-        circle.draw();
+        body.draw();
     }
 
     public void update() {
-        circle.move(vector.getX(), vector.getY());
+        body.move(movementVector.getX(), movementVector.getY());
         handleCanvasBorderCollision();
     }
 
     private void handleCanvasBorderCollision() {
-        if (circle.getXPos() - circle.getRadius() < 0) {
-            circle.setXPos(circle.getRadius());
-            vector.setX(vector.getX() * -1);
-        } else if (circle.getXPos() + circle.getRadius() > WolvesAndSheep.CANVAS_WIDTH ){
-            circle.setXPos(WolvesAndSheep.CANVAS_WIDTH - circle.getRadius());
-            vector.setX(vector.getX() * -1);
+        if (body.getXPos() - body.getRadius() < 0) {
+            body.setXPos(body.getRadius());
+            movementVector.setX(movementVector.getX() * -1);
+        } else if (body.getXPos() + body.getRadius() > WolvesAndSheep.CANVAS_WIDTH ){
+            body.setXPos(WolvesAndSheep.CANVAS_WIDTH - body.getRadius());
+            movementVector.setX(movementVector.getX() * -1);
         }
-        if (circle.getYPos() - circle.getRadius() < 0) {
-            circle.setYPos(circle.getRadius());
-            vector.setY(vector.getY() * -1);
-        } else if (circle.getYPos() + circle.getRadius() > WolvesAndSheep.CANVAS_HEIGHT) {
-            circle.setYPos(WolvesAndSheep.CANVAS_HEIGHT - circle.getRadius());
-            vector.setY(vector.getY() * -1);
+        if (body.getYPos() - body.getRadius() < 0) {
+            body.setYPos(body.getRadius());
+            movementVector.setY(movementVector.getY() * -1);
+        } else if (body.getYPos() + body.getRadius() > WolvesAndSheep.CANVAS_HEIGHT) {
+            body.setYPos(WolvesAndSheep.CANVAS_HEIGHT - body.getRadius());
+            movementVector.setY(movementVector.getY() * -1);
         }
     }
 
     public void checkCollision(Animal animal) {
         if (!animal.isAlive || !this.isAlive) return;
-        if (circle.hitTest(animal.getX(), animal.getY())) {
-            handleCollision(animal);
+        if (body.hitTest(animal.getX(), animal.getY())) {
+            handleConfrontation(animal);
         }
     }
 
-    public abstract void handleCollision(Animal animal);
+    public abstract void handleConfrontation(Animal animal);
 
     public void die() {
         isAlive = false;
     }
 
     public float getX() {
-        return circle.getXPos();
+        return body.getXPos();
     }
 
     public float getY() {
-        return circle.getYPos();
+        return body.getYPos();
     }
 
     public float getSize() {
-        return circle.getRadius();
+        return body.getRadius();
     }
 
 }

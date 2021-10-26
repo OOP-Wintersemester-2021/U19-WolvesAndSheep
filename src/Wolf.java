@@ -11,8 +11,8 @@ public class Wolf extends Animal {
 
     private int timeSinceLastEaten;
 
-    public Wolf(float x, float y, float radius, Vector vector) {
-        super(x, y, radius, WOLF_COLOR, vector);
+    public Wolf(float x, float y, float size, Vector movementVector) {
+        super(x, y, size, WOLF_COLOR, movementVector);
         timeSinceLastEaten = 0;
     }
 
@@ -28,16 +28,16 @@ public class Wolf extends Animal {
     }
 
     private void sleepHungry() {
-        float shrinkage = Math.max(SIZE_DECAY, circle.getRadius() * MIN_SIZE_DECAY_PERCENTAGE);
-        circle.setRadius(circle.getRadius() - shrinkage);
+        float shrinkage = Math.max(SIZE_DECAY, body.getRadius() * MIN_SIZE_DECAY_PERCENTAGE);
+        body.setRadius(body.getRadius() - shrinkage);
         timeSinceLastEaten = 0;
-        if (circle.getRadius() <= STARVATION_SIZE) {
+        if (body.getRadius() <= STARVATION_SIZE) {
             die();
         }
     }
 
     private void devour(Sheep prey) {
-        circle.setRadius(circle.getRadius() + prey.getSize() / 2);
+        body.setRadius(body.getRadius() + prey.getSize() / 2);
         timeSinceLastEaten = 0;
         prey.die();
     }
@@ -45,12 +45,12 @@ public class Wolf extends Animal {
     @Override
     public void die() {
         super.die();
-        circle.setColor(Colors.WHITE);
-        circle.setBorder(Colors.RED, 1);
+        body.setColor(Colors.WHITE);
+        body.setBorder(Colors.RED, 1);
     }
 
     @Override
-    public void handleCollision(Animal animal) {
+    public void handleConfrontation(Animal animal) {
         if (animal instanceof Sheep) {
             devour((Sheep) animal);
         } else if (animal instanceof  Wolf) {
@@ -59,7 +59,7 @@ public class Wolf extends Animal {
             } else if (animal.getSize() > this.getSize()) {
                 this.die();
             } else {
-                vector.mirror();
+                movementVector.mirror();
             }
         }
     }
