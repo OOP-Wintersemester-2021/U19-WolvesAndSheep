@@ -5,7 +5,7 @@ import de.ur.mi.oop.launcher.GraphicsAppLauncher;
 
 import java.util.Random;
 
-public class WolfAndSheep extends GraphicsApp {
+public class WolvesAndSheep extends GraphicsApp {
 
     /* Private Konstanten */
     public static final int CANVAS_HEIGHT = 800;

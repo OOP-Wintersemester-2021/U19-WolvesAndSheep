@@ -26,15 +26,15 @@ public abstract class Animal {
         if (circle.getXPos() - circle.getRadius() < 0) {
             circle.setXPos(circle.getRadius());
             vector.setX(vector.getX() * -1);
-        } else if (circle.getXPos() + circle.getRadius() > WolfAndSheep.CANVAS_WIDTH ){
-            circle.setXPos(WolfAndSheep.CANVAS_WIDTH - circle.getRadius());
+        } else if (circle.getXPos() + circle.getRadius() > WolvesAndSheep.CANVAS_WIDTH ){
+            circle.setXPos(WolvesAndSheep.CANVAS_WIDTH - circle.getRadius());
             vector.setX(vector.getX() * -1);
         }
         if (circle.getYPos() - circle.getRadius() < 0) {
             circle.setYPos(circle.getRadius());
             vector.setY(vector.getY() * -1);
-        } else if (circle.getYPos() + circle.getRadius() > WolfAndSheep.CANVAS_HEIGHT) {
-            circle.setYPos(WolfAndSheep.CANVAS_HEIGHT - circle.getRadius());
+        } else if (circle.getYPos() + circle.getRadius() > WolvesAndSheep.CANVAS_HEIGHT) {
+            circle.setYPos(WolvesAndSheep.CANVAS_HEIGHT - circle.getRadius());
             vector.setY(vector.getY() * -1);
         }
     }
