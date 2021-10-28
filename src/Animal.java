@@ -19,7 +19,7 @@ public abstract class Animal {
     protected Circle body;
     // Die Bewegung bei jedem Update wird durch einen 2d-Vektor dargestellt.
     protected Vector movementVector;
-    // Attribut zur Darstellung, ob ein bereits gestorben ist.
+    // Attribut zur Darstellung, ob ein Animal bereits gestorben ist.
     protected boolean isAlive;
 
     /*
