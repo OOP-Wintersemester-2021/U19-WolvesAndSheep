@@ -9,13 +9,13 @@ Erstellen Sie ein Programm, in dem auf rudimentäre Art und Weise Jagen und Geja
   - werden als Kreise dargestellt mit einheitlicher Farbe für die Schafe (z.B. hellgrau) und einheitlicher Farbe für die Wölfe (z.B. braun)
 
 - Testen Sie, ob zwei Tiere aufeinandergetroffen sind, also _kollidieren_ (d.h. ihre Kreise überlappen)
-  - wenn ein Wolf und ein Schaf aufeinandergetroffen sind, frisst der Wolf das Schaf wird größer (z.B. Radius des Kreises des Schafes auf den Radius des Kreises des Wolfs aufaddieren)
+  - wenn ein Wolf und ein Schaf aufeinandergetroffen sind, frisst der Wolf das Schaf und wird größer (z.B. Radius des Kreises des Schafes auf den Radius des Kreises des Wolfs aufaddieren)
   - wenn ein Wolf und ein anderer Wolf aufeinandertreffen, kommt es zum Kampf, den der Größere der beiden Wölfe überlebt und der Kleinere nicht. Färben Sie hierfür den Kreis des unterlegenen Wolfes weiß und den Rand des Kreises (Border) rot. Der unterlegene Wolf kann sich daraufhin nicht mehr bewegen und interagieren.
   - wenn zwei Schafe aufeinandertreffen, dann gehen sich beide aus dem Weg
  
 - Wölfe starten als größere Kreise als Schafe
 - Innerhalb eines festen Zeitintervalls, werden Wölfe, die kein Schaf gerissen haben, wegen Hunger kleiner (z.B. 10% ihrer vorherigen Größe aber mindestens drei Größeneinheiten)
-- Wölfe die zu lange kein Schaf gerissen haben, verhungern (z.B. Kreisradius ist kleiner als definierter Wert) und werden dann ebenfalls weiß gefärbt und mit einem roten Rand versehen
+- Wölfe die zu lange kein Schaf gerissen haben, verhungern (z.B. Kreisradius ist kleiner als definierter Wert) und werden dann ebenfalls weiß gefärbt, mit einem roten Rand versehen und können sich weder bewegen noch interagieren. 
 
 - Modellieren Sie Ihr Programm mit sinnvollen Klassen
   - Erstellen Sie eine Klasse `Animal` von der die Klassen `Wolf` und `Sheep` erben
