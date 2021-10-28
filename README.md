@@ -23,6 +23,8 @@ Erstellen Sie ein Programm, in dem auf rudimentäre Art und Weise Jagen und Geja
   - Erstellen Sie eine Klasse `Animal` von der die Klassen `Wolf` und `Sheep` erben
   - Implementieren Sie in der Klasse `Animal` das Verhalten, das `Wolf` und `Sheep` gemeinsam haben (z.B. bewegen)
   - Implementieren Sie das Verhalten, das jeweils für Wölfe und Schafe spezifisch ist in deren jeweiligen Klassen
+
+- Überlegen Sie sich sinnvolle Methoden und Datenstrukturen, um die Objekte ihres Programms zu verwalten (z.B. `Animal[]` in das Sie wegen Polymorphie Objekte von `Wolf` und `Schaf` speichern können) 
  
 - Die Klassen `Animal`, `Wolf` und `Sheep`sind vollständig für deren jeweiligen Berechnungen von Verhalten zuständig
 - Die Klasse `WolvesAndSheep` dient lediglich als Einstiegspunkt für Ihr Programm 
