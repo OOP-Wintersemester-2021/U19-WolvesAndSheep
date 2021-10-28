@@ -4,7 +4,6 @@ import de.ur.mi.oop.colors.Colors;
 /*
     Diese Klasse soll einen Wolf darstellen. Dafür erbt sie von der Animal-Klasse.
     Durch die Vererbung übernimmt sie alle Eigenschaften und Methoden der Animal-Klasse.
-    Alle Methoden, die in der Animal-Klasse als "abstract" deklariert wurden, müssen überschrieben werden.
  */
 public class Wolf extends Animal {
 

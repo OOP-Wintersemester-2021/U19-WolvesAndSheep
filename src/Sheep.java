@@ -3,7 +3,6 @@ import de.ur.mi.oop.colors.Color;
 /*
     Diese Klasse soll ein Sheep darstellen. Dafür erbt sie von der Animal-Klasse.
     Durch die Vererbung übernimmt sie alle Eigenschaften und Methoden der Animal-Klasse.
-    Alle Methoden, die in der Animal-Klasse als "abstract" deklariert wurden, müssen überschrieben werden.
  */
 public class Sheep extends Animal {
 
@@ -30,7 +29,6 @@ public class Sheep extends Animal {
     }
 
     /*
-       Das Überschreiben der handleConfrontation-Methode der Animal-Klasse ist durch das "abstract"-Schlüsselwort in der Super-Klasse erforderlich.
        Da ein Sheep nicht mehr agieren kann, wenn es auf einen Wolf trifft, weil es vorher gefressen wird,
        muss hier nur der Aufprall mit einem anderen Sheep implementiert werden.
        Dann soll das Sheep umdrehen.

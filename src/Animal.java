@@ -4,10 +4,6 @@ import de.ur.mi.oop.graphics.Circle;
 /*
     Diese Klasse dient als gemeinsamer Grundbaustein für die Wolf- und Sheep-Klassen.
     Sie gibt alle Eigenschaften und Methoden vor, die sich diese beiden teilen.
-    Da es metaphorisch betrachtet kein "Tier" gibt, dass nicht spezifiziert werden kann -
-    also in dieser Welt Wolf oder Schaf ist - wird die Klasse als "abstract" deklariert.
-    Damit wird verhindert, dass z.B. mit "new Animal(...)" eine Instanz von Animal erstellt werden kann.
-    Instanzen können nur von Sub-Klassen, also Wolf oder Schaf, erstellt werden.
  */
 public class Animal {
 
@@ -92,8 +88,8 @@ public class Animal {
     /*
         In dieser Methode soll auf einen Zusammenprall mit einem anderen Animal reagiert werden.
         Da sich das Verhalten je nachdem ob es sich um Schaf oder Wolf handelt, unterscheidet,
-        wird hier kein Rumpf vorgegeben.
-        Die handleConfrontation-Methode soll in der geerbten Klasse überschrieben werden.
+        wird hier ein leerer Rumpf vorgegeben.
+        Die handleConfrontation-Methode soll in der geerbten Klasse überschrieben werden, um für diese das gewünschte Verhalten zu implementieren.
      */
     public void handleConfrontation(Animal animal) {
 
