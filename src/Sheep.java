@@ -13,8 +13,8 @@ public class Sheep extends Animal {
     /*
         Im Konstruktor muss der Super-Konstruktor der Animal-Klasse aufgerufen werden.
     */
-    public Sheep(float x, float y, float size, Vector movementVector) {
-        super(x, y, size, SHEEP_COLOR, movementVector);
+    public Sheep(float x, float y, float size, float movementX, float movementY) {
+        super(x, y, size, SHEEP_COLOR, movementX, movementY);
     }
 
     /*
@@ -44,7 +44,8 @@ public class Sheep extends Animal {
     @Override
     public void handleConfrontation(Animal animal) {
         if (animal instanceof Sheep) {
-            movementVector.mirror();
+            movementX *= -1;
+            movementY *= -1;
         }
     }
 }

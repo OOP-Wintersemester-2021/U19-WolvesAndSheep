@@ -21,8 +21,8 @@ public class Wolf extends Animal {
     /*
         Im Konstruktor muss der Super-Konstruktor der Animal-Klasse aufgerufen werden.
      */
-    public Wolf(float x, float y, float size, Vector movementVector) {
-        super(x, y, size, WOLF_COLOR, movementVector);
+    public Wolf(float x, float y, float size, float movementX, float movementY) {
+        super(x, y, size, WOLF_COLOR, movementX, movementY);
         timeSinceLastEatenOrSlept = 0;
     }
 
@@ -103,7 +103,8 @@ public class Wolf extends Animal {
             } else if (animal.getSize() > this.getSize()) {
                 this.die();
             } else {
-                movementVector.mirror();
+                movementX *= -1;
+                movementY *= -1;
             }
         }
     }
