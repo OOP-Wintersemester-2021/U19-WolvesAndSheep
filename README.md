@@ -4,7 +4,9 @@ Erstellen Sie ein Programm, in dem auf rudimentäre Art und Weise Jagen und Geja
 
 ![Wolves&Sheep!](./docs/wolves&sheep_demo.gif)
 
+
 ## Anforderungen
+
 
 - Alle Schafe und Wölfe:
   - starten auf einer zufälligen Position der Zeichenfläche
